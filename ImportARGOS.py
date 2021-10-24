@@ -17,6 +17,10 @@ import sys, os, arcpy
 inputFile = 'V:/ARGOSTracking/Data/ARGOSData/1997dg.txt'
 outputFC = "V:/ARGOSTracking/Scratch/ARGOStrack.shp"
 
+# Create feature class to which we will add features
+outPath, outFile = os.path.split(outputFC)
+arcpy.management.CreateFeatureclass(outPath, outFile)
+
 #%% Construct a while loop to iterate through all lines in the datafile
 # Open the ARGOS data file for reading
 inputFileObj = open(inputFile,'r')
