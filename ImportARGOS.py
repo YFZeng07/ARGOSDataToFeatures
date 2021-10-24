@@ -17,9 +17,9 @@ import sys, os, arcpy
 arcpy.env.overwriteOutput = True
 
 # Set input variables (Hard-wired)
-inputFolder = 'V:/ARGOSTracking/Data/ARGOSData'
-outputSR = arcpy.SpatialReference(54002)
-outputFC = "V:/ARGOSTracking/Scratch/ARGOStrack.shp"
+inputFolder = sys.argy[1] #'V:/ARGOSTracking/Data/ARGOSData'
+outputSR = sys.argy[2] #arcpy.SpatialReference(54002)
+outputFC = sys.argy[3] #"V:/ARGOSTracking/Scratch/ARGOStrack.shp"
 
 # Create a list of files in the user provided input folder
 inputFiles = os.listdir(inputFolder)
